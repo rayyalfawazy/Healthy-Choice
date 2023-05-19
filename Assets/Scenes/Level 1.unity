@@ -256,9 +256,53 @@ MonoBehaviour:
   - {fileID: 6121166949414053769, guid: 23b797db67e15974a962468fa6370e53, type: 3}
   - {fileID: 6196354273802279588, guid: d62fe5a918ea93b428de0738e5f4f564, type: 3}
   - {fileID: 9000247878013019466, guid: af7c0bb6854e4434194f3945eda46a28, type: 3}
-  spawnDelay: 0.5
+  spawnDelay: 1
   spawnHeight: 7
   boundScale: 7.5
+--- !u!1 &1619520092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619520094}
+  - component: {fileID: 1619520093}
+  m_Layer: 0
+  m_Name: CursorHider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1619520093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619520092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4dbae3f0c3edb94987506038c6eb14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1619520094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619520092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.0088243, y: 5.2642684, z: -0.0700336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1675087956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 2853644970670592421, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
       propertyPath: speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853644970670592421, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
+      propertyPath: boundScale
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2853644970670592422, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
       propertyPath: m_RootOrder
