@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7718721401763268925}
   - component: {fileID: 8636460248494395497}
   - component: {fileID: 4236897828384747027}
-  - component: {fileID: 4681643493966993969}
+  - component: {fileID: -4650554182692401864}
   m_Layer: 0
   m_Name: Square
   m_TagString: HealthyFoods
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4681643493966993969
+--- !u!114 &-4650554182692401864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6121166949414053769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b7782caa98b50746afc2aca5059cd30, type: 3}
+  m_Script: {fileID: 11500000, guid: af5e63a8e85f1364db2be16f1ead8131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreRate: 0

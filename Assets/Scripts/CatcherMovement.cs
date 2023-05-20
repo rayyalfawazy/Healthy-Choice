@@ -14,7 +14,7 @@ public class CatcherMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Get Movement Axis
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis("Mouse X");
 
         // Movement
         Vector2 movement = new Vector2(moveHorizontal, 0f);

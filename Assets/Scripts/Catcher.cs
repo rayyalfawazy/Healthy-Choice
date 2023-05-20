@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class Catcher : MonoBehaviour
 {
+    int score;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Debug.Log("Triggered");
-
         if (collision.tag == "HealthyFoods")
         {
-            Debug.Log(collision.tag);
+            score += 1;
         }
         else if (collision.tag == "JunkFoods")
         {
-            Debug.Log(collision.tag);
+            score -= 1;
         }
-        else
-        {
-            return;
-        }
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

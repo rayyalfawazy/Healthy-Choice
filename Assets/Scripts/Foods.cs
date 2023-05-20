@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Foods : MonoBehaviour
 {
-    [SerializeField] ScoreSystem scoreSystem;
+    [SerializeField] int scoreRate;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Catcher")

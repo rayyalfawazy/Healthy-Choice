@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2641417308907226470}
   - component: {fileID: 876095435215828221}
   - component: {fileID: 7908559981293559873}
-  - component: {fileID: -3400523649586370897}
+  - component: {fileID: 6205819165955609995}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: JunkFoods
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3400523649586370897
+--- !u!114 &6205819165955609995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9000247878013019466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2617eb15821d614c9c33c484a921d65, type: 3}
+  m_Script: {fileID: 11500000, guid: af5e63a8e85f1364db2be16f1ead8131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreRate: 0
