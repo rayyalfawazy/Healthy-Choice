@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Foods : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] ScoreSystem scoreSystem;
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.tag == "Catcher")
+        {
+            Destroy(gameObject);
+        }
     }
 }

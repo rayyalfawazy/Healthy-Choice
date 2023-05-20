@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    [SerializeField] GameObject[] objectsToSpawn; // Array berisi objek-objek yang akan di-spawn
+    public GameObject[] objectsToSpawn; // Array berisi objek-objek yang akan di-spawn
     [SerializeField] float spawnDelay = 1.0f; // Waktu jeda antara setiap spawn
     [SerializeField] float spawnHeight = 10.0f; // Skala Ketinggian spawn
     [SerializeField] float boundScale; // Skala Batasan Horizontal
