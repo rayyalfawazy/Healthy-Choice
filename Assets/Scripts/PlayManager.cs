@@ -10,7 +10,17 @@ public class PlayManager : MonoBehaviour
     [SerializeField] int targetScore;
     [SerializeField] UnityEvent onWin, onLose;
 
+    public List<StageData> stageDatas;
+    public StageData currentStage;
+
     [System.NonSerialized] public int value;
+
+    private void Start()
+    {
+        int tmpIndex = PlayerPrefs.GetInt("LevelData");
+        currentStage = stageDatas[tmpIndex];
+        targetScore = currentStage.targetObjective;
+    }
 
     void Update()
     {
