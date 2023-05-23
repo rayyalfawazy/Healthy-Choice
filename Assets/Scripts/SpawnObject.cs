@@ -5,11 +5,16 @@ using UnityEngine;
 public class SpawnObject : MonoBehaviour
 {
     public GameObject[] objectsToSpawn; // Array berisi objek-objek yang akan di-spawn
-    [SerializeField] float spawnDelay = 1.0f; // Waktu jeda antara setiap spawn
-    [SerializeField] float spawnHeight = 10.0f; // Skala Ketinggian spawn
+    [SerializeField] float spawnDelay; // Waktu jeda antara setiap spawn
+    [SerializeField] float spawnHeight; // Skala Ketinggian spawn
     [SerializeField] float boundScale; // Skala Batasan Horizontal
 
     private float spawnTimer = 0.0f;
+
+    private void Start()
+    {
+        SpawnRandomObject();
+    }
 
     private void Update()
     {
