@@ -11,9 +11,15 @@ public class HideCursor : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MakeInvisibleLocked()
     {
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void MakeVisibleUnlocked()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }

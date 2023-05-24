@@ -12,6 +12,12 @@ public class ScoreScreen : MonoBehaviour
     [SerializeField] Slider fillHealthySlider, fillUnhealthySlider;
     [SerializeField] float slideSmoothness;
 
+    private void Start()
+    {
+        fillHealthySlider.maxValue = playManager.currentStage.targetObjective;
+        fillUnhealthySlider.maxValue = playManager.currentStage.targetObjective;
+    }
+
     private void Update()
     {
 
@@ -32,5 +38,11 @@ public class ScoreScreen : MonoBehaviour
                                                 slideSmoothness * Time.deltaTime);
             fillUnhealthySlider.value = currentValue;
         }
+    }
+
+    public void ResetSlider() 
+    {
+        fillHealthySlider.maxValue = playManager.currentStage.targetObjective;
+        fillUnhealthySlider.maxValue = playManager.currentStage.targetObjective;
     }
 }

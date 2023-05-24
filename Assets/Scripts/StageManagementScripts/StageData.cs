@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "LevelData")]
 public class StageData : ScriptableObject
 {
     public string stageName;
 
+    public Image backgroundImage;
+
     public int targetObjective;
 
-    public float baseMinValue;
-    public float baseMaxValue;
+    public float minFallSpeedValue;
+    public float maxFalSpeedValue;
 }

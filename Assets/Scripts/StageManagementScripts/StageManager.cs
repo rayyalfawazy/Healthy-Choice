@@ -17,10 +17,4 @@ public class StageManager : MonoBehaviour
             Instantiate(stageButton, stageParent);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

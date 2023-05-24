@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Foods : MonoBehaviour
 {
-    float fallSpeed = 5f;
+    float fallSpeed;
     private Rigidbody2D rb;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        Debug.Log(fallSpeed);
     }
 
     private void FixedUpdate()

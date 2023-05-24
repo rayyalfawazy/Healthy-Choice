@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayManager : MonoBehaviour
 {
     [SerializeField] Catcher catcher;
-    [SerializeField] int targetScore;
+    int targetScore;
     [SerializeField] UnityEvent onWin, onLose;
 
     public List<StageData> stageDatas;
@@ -38,5 +38,13 @@ public class PlayManager : MonoBehaviour
             // Debug.Log("Lose");
             onLose.Invoke();
         }
+    }
+
+    public void GoToNextStage()
+    {
+        int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
+        Debug.Log(nextIndex);
+        currentStage = stageDatas[nextIndex];
+        targetScore = currentStage.targetObjective;
     }
 }

@@ -13,11 +13,6 @@ public class SpawnObject : MonoBehaviour
 
     private float spawnTimer = 0.0f;
 
-    private void Start()
-    {
-        SpawnRandomObject();
-    }
-
     private void Update()
     {
         spawnTimer += Time.deltaTime;
@@ -42,6 +37,8 @@ public class SpawnObject : MonoBehaviour
 
         // Buat objek baru di posisi spawn
         GameObject foods = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+        // Atur Kecepatan Jatuh Obeject
         foods.GetComponent<Foods>().SetMinMax(minValue,maxValue);
     }
 }
