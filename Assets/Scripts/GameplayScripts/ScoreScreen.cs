@@ -14,7 +14,7 @@ public class ScoreScreen : MonoBehaviour
 
     private void Start()
     {
-        SetSliderValue();
+        ResetSliderValue();
     }
 
     private void Update()
@@ -39,7 +39,7 @@ public class ScoreScreen : MonoBehaviour
         }
     }
 
-    public void SetSliderValue()
+    public void ResetSliderValue()
     {
         playManager.GetStageData();
         fillHealthySlider.maxValue = playManager.targetScore;
