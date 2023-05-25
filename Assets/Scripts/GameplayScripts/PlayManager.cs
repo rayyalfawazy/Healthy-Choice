@@ -37,12 +37,12 @@ public class PlayManager : MonoBehaviour
         }
     }
 
-    public void GoToNextStage(int stageIndex)
+    public void GoToNextStage()
     {
         int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
         PlayerPrefs.SetInt("LevelData", nextIndex);
-        currentStage = stageDatas[nextIndex];
-        targetScore = currentStage.targetObjective;
+        // Debug.Log($"Player Pref : {PlayerPrefs.GetInt("LevelData")}, Next Index : {nextIndex}");
+        GetStageData();
     }
 
     public void GetStageData()
@@ -52,5 +52,7 @@ public class PlayManager : MonoBehaviour
         targetScore = currentStage.targetObjective;
         baseMinFall = currentStage.minFallSpeedValue;
         baseMaxFall = currentStage.maxFalSpeedValue;
+
+        Debug.Log($"Player Pref Index : {tmpIndex}, Data : {targetScore} {baseMinFall} {baseMaxFall}");
     }
 }
