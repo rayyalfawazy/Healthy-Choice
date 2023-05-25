@@ -14,8 +14,9 @@ public class ScoreScreen : MonoBehaviour
 
     private void Start()
     {
-        fillHealthySlider.maxValue = playManager.currentStage.targetObjective;
-        fillUnhealthySlider.maxValue = playManager.currentStage.targetObjective;
+        playManager.GetStageData();
+        fillHealthySlider.maxValue = playManager.targetScore;
+        fillUnhealthySlider.maxValue = playManager.targetScore;
     }
 
     private void Update()
@@ -38,11 +39,5 @@ public class ScoreScreen : MonoBehaviour
                                                 slideSmoothness * Time.deltaTime);
             fillUnhealthySlider.value = currentValue;
         }
-    }
-
-    public void ResetSlider() 
-    {
-        fillHealthySlider.maxValue = playManager.currentStage.targetObjective;
-        fillUnhealthySlider.maxValue = playManager.currentStage.targetObjective;
     }
 }

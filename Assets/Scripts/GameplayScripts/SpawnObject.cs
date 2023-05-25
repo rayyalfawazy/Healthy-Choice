@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
+    public PlayManager playManager; // Ambil Data Play Manager
     public GameObject[] objectsToSpawn; // Array berisi objek-objek yang akan di-spawn
     [SerializeField] float spawnDelay; // Waktu jeda antara setiap spawn
     [SerializeField] float spawnHeight; // Skala Ketinggian spawn
@@ -12,6 +13,13 @@ public class SpawnObject : MonoBehaviour
     [SerializeField] float maxValue; // Skala Batasan Maksimum Fall
 
     private float spawnTimer = 0.0f;
+
+    private void Start()
+    {
+        playManager.GetStageData();
+        minValue = playManager.baseMinFall;
+        maxValue = playManager.baseMaxFall;
+    }
 
     private void Update()
     {

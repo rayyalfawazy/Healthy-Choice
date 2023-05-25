@@ -1197,30 +1197,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1982565957}
-        m_TargetAssemblyTypeName: PlayManager, Assembly-CSharp
-        m_MethodName: GoToNextStage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 167952281}
-        m_TargetAssemblyTypeName: ScoreScreen, Assembly-CSharp
-        m_MethodName: ResetSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &736014460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,6 +1962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bfdb0fea98a1c4b927f83ee01858b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playManager: {fileID: 1982565957}
   objectsToSpawn:
   - {fileID: 5175702100453350222, guid: f054aabdaf13be841856e30049fa876d, type: 3}
   - {fileID: 6121166949414053769, guid: 23b797db67e15974a962468fa6370e53, type: 3}
@@ -2781,6 +2758,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  targetScore: 0
+  baseMinFall: 0
+  baseMaxFall: 0
   stageDatas:
   - {fileID: 11400000, guid: 78ca4dc3fa3fa644c987a5e37e7ef29c, type: 2}
   - {fileID: 11400000, guid: d08c07e126007ab46aaf016effc5ba35, type: 2}

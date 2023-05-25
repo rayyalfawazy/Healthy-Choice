@@ -15,5 +15,5 @@ MonoBehaviour:
   stageName: Stage 1
   backgroundImage: {fileID: 0}
   targetObjective: 10
-  baseMinValue: 5
-  baseMaxValue: 10
+  minFallSpeedValue: 6
+  maxFalSpeedValue: 7

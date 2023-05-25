@@ -156,13 +156,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 78ca4dc3fa3fa644c987a5e37e7ef29c, type: 2}
   - {fileID: 11400000, guid: d08c07e126007ab46aaf016effc5ba35, type: 2}
   - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
-  - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
   stageButton: {fileID: 7712123289485073099, guid: d62d24949b8a4854c8f4e9714a10b9a8, type: 3}
   stageParent: {fileID: 1599241042}
 --- !u!4 &388119938

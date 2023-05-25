@@ -7,44 +7,50 @@ using UnityEngine.Events;
 public class PlayManager : MonoBehaviour
 {
     [SerializeField] Catcher catcher;
-    int targetScore;
     [SerializeField] UnityEvent onWin, onLose;
-
+    public int targetScore;
+    public float baseMinFall, baseMaxFall;
     public List<StageData> stageDatas;
     public StageData currentStage;
-
     [System.NonSerialized] public int value;
 
     private void Start()
     {
-        int tmpIndex = PlayerPrefs.GetInt("LevelData");
-        currentStage = stageDatas[tmpIndex];
-        targetScore = currentStage.targetObjective;
+        GetStageData();
     }
 
     void Update()
     {
+        // Debug.Log($"Target Objective : {targetScore}");
+
         value = catcher.GetScore();
         if (value == targetScore)
         {
             // Win Statement
-            // Debug.Log("Win");
             onWin.Invoke();
         }
 
         if (value == -targetScore)
         {
             // Lose Statement
-            // Debug.Log("Lose");
             onLose.Invoke();
         }
     }
 
-    public void GoToNextStage()
+    public void GoToNextStage(int stageIndex)
     {
         int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
-        Debug.Log(nextIndex);
+        PlayerPrefs.SetInt("LevelData", nextIndex);
         currentStage = stageDatas[nextIndex];
         targetScore = currentStage.targetObjective;
+    }
+
+    public void GetStageData()
+    {
+        int tmpIndex = PlayerPrefs.GetInt("LevelData");
+        currentStage = stageDatas[tmpIndex];
+        targetScore = currentStage.targetObjective;
+        baseMinFall = currentStage.minFallSpeedValue;
+        baseMaxFall = currentStage.maxFalSpeedValue;
     }
 }

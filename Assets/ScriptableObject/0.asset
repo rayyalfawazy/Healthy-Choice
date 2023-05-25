@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 0
   m_EditorClassIdentifier: 
   stageName: Stage 1
+  backgroundImage: {fileID: 0}
   targetObjective: 5
-  baseMinValue: 5
-  baseMaxValue: 10
+  minFallSpeedValue: 5
+  maxFalSpeedValue: 6
