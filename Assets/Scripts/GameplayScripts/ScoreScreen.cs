@@ -10,6 +10,7 @@ public class ScoreScreen : MonoBehaviour
     [SerializeField] PlayManager playManager;
     [SerializeField] Catcher catcher;
     [SerializeField] Slider fillHealthySlider, fillUnhealthySlider;
+    [SerializeField] Image fillHealthy, fillUnhealthy;
     [SerializeField] float slideSmoothness;
 
     private void Start()
