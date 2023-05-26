@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayManager : MonoBehaviour
 {
     [SerializeField] Catcher catcher;
-    [SerializeField] UnityEvent onWin, onLose;
+    [SerializeField] UnityEvent onWin, onLose, preStart;
     public int targetScore;
     public float baseMinFall, baseMaxFall;
     public List<StageData> stageDatas;
@@ -17,6 +17,7 @@ public class PlayManager : MonoBehaviour
     private void Start()
     {
         GetStageData();
+        PreStart();
     }
 
     void Update()
@@ -43,6 +44,7 @@ public class PlayManager : MonoBehaviour
         PlayerPrefs.SetInt("LevelData", nextIndex);
         // Debug.Log($"Player Pref : {PlayerPrefs.GetInt("LevelData")}, Next Index : {nextIndex}");
         GetStageData();
+        PreStart();
     }
 
     public void GetStageData()
@@ -54,5 +56,11 @@ public class PlayManager : MonoBehaviour
         baseMaxFall = currentStage.maxFalSpeedValue;
 
         Debug.Log($"Player Pref Index : {tmpIndex}, Data : {targetScore} {baseMinFall} {baseMaxFall}");
+    }
+
+    public void PreStart()
+    {
+        preStart.Invoke();
+        Debug.Log($"Kamu harus mengumpulkan {targetScore} poin Healthy jika ingin menang, namun jika kamu mengumpulkan {targetScore} poin Unhealthy kamu akan kalah");
     }
 }
