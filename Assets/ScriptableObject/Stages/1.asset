@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76440ae8162ad7d4ab29150e717c0b60, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  stageName: Stage 1
+  stageName: Stage 2
   backgroundImage: {fileID: 0}
   targetObjective: 2
   minFallSpeedValue: 5
