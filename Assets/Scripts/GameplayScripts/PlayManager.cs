@@ -55,12 +55,11 @@ public class PlayManager : MonoBehaviour
         baseMinFall = currentStage.minFallSpeedValue;
         baseMaxFall = currentStage.maxFalSpeedValue;
 
-        Debug.Log($"Player Pref Index : {tmpIndex}, Data : {targetScore} {baseMinFall} {baseMaxFall}");
+        // Debug.Log($"Player Pref Index : {tmpIndex}, Data : {targetScore} {baseMinFall} {baseMaxFall}");
     }
 
     public void PreStart()
     {
         preStart.Invoke();
-        Debug.Log($"Kamu harus mengumpulkan {targetScore} poin Healthy jika ingin menang, namun jika kamu mengumpulkan {targetScore} poin Unhealthy kamu akan kalah");
     }
 }
