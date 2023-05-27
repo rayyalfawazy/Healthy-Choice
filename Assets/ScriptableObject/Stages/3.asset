@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76440ae8162ad7d4ab29150e717c0b60, type: 3}
-  m_Name: 2
+  m_Name: 3
   m_EditorClassIdentifier: 
-  stageName: Stage 3
+  stageName: Stage 4
   backgroundImage: {fileID: 0}
-  targetObjective: 15
+  targetObjective: 20
   minFallSpeedValue: 6
   maxFalSpeedValue: 7
