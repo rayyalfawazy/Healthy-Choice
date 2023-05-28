@@ -42,28 +42,28 @@ public class PlayManager : MonoBehaviour
 
     public void GoToNextStage()
     {
-        try
-        {
             int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
             PlayerPrefs.SetInt("LevelData", nextIndex);
             GetStageData();
             PreStart();
+    }
+
+    public void GetStageData()
+    {
+        try
+        {
+            int tmpIndex = PlayerPrefs.GetInt("LevelData");
+            currentStage = stageDatas[tmpIndex];
+            targetScore = currentStage.targetObjective;
+            baseMinFall = currentStage.minFallSpeedValue;
+            baseMaxFall = currentStage.maxFalSpeedValue;
         }
-        catch 
+        catch
         {
             SceneManager.LoadScene("LevelSelector");
             DOTween.KillAll();
             onEndStage.Invoke();
         }
-    }
-
-    public void GetStageData()
-    {
-        int tmpIndex = PlayerPrefs.GetInt("LevelData");
-        currentStage = stageDatas[tmpIndex];
-        targetScore = currentStage.targetObjective;
-        baseMinFall = currentStage.minFallSpeedValue;
-        baseMaxFall = currentStage.maxFalSpeedValue;
     }
 
     public void PreStart()
