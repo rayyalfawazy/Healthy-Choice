@@ -973,7 +973,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2853644970670592421, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
   m_PrefabInstance: {fileID: 1675087956}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1675087957}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98cd0f1fc4263fd4a89f9cd6f65f606d, type: 3}
@@ -2787,6 +2787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
+--- !u!1 &1675087957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2853644970670592420, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
+  m_PrefabInstance: {fileID: 1675087956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715562246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,6 +3176,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onEndStage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1619520093}
+        m_TargetAssemblyTypeName: HideCursor, Assembly-CSharp
+        m_MethodName: MakeVisibleUnlocked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1675087957}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1361547324}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   targetScore: 0
   baseMinFall: 0
   baseMaxFall: 0
@@ -3178,6 +3222,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 78ca4dc3fa3fa644c987a5e37e7ef29c, type: 2}
   - {fileID: 11400000, guid: d08c07e126007ab46aaf016effc5ba35, type: 2}
   - {fileID: 11400000, guid: 85f1078e3f3c82a489f8d0f358d50f9c, type: 2}
+  - {fileID: 11400000, guid: 96c932366a3240f489d4ae27a8309bd6, type: 2}
+  - {fileID: 11400000, guid: 38a27974f17c82d4c916715eaeeb6e67, type: 2}
   currentStage: {fileID: 0}
 --- !u!1 &2075205719
 GameObject:

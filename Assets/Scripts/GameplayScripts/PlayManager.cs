@@ -1,13 +1,15 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayManager : MonoBehaviour
 {
     [SerializeField] Catcher catcher;
-    [SerializeField] UnityEvent onWin, onLose, preStart;
+    [SerializeField] UnityEvent onWin, onLose, preStart, onEndStage;
     public int targetScore;
     public float baseMinFall, baseMaxFall;
     public List<StageData> stageDatas;
@@ -40,11 +42,19 @@ public class PlayManager : MonoBehaviour
 
     public void GoToNextStage()
     {
-        int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
-        PlayerPrefs.SetInt("LevelData", nextIndex);
-        // Debug.Log($"Player Pref : {PlayerPrefs.GetInt("LevelData")}, Next Index : {nextIndex}");
-        GetStageData();
-        PreStart();
+        try
+        {
+            int nextIndex = PlayerPrefs.GetInt("LevelData") + 1;
+            PlayerPrefs.SetInt("LevelData", nextIndex);
+            GetStageData();
+            PreStart();
+        }
+        catch 
+        {
+            SceneManager.LoadScene("LevelSelector");
+            DOTween.KillAll();
+            onEndStage.Invoke();
+        }
     }
 
     public void GetStageData()
@@ -54,8 +64,6 @@ public class PlayManager : MonoBehaviour
         targetScore = currentStage.targetObjective;
         baseMinFall = currentStage.minFallSpeedValue;
         baseMaxFall = currentStage.maxFalSpeedValue;
-
-        // Debug.Log($"Player Pref Index : {tmpIndex}, Data : {targetScore} {baseMinFall} {baseMaxFall}");
     }
 
     public void PreStart()
