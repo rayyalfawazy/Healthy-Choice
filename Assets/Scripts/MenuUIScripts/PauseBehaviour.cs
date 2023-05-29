@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class PauseBehaviour : MonoBehaviour
 {
     private bool isPaused = false;
+
+    public GameObject pausePanel;
 
     private void Update()
     {
@@ -22,15 +24,17 @@ public class PauseManager : MonoBehaviour
     private void PauseGame()
     {
         isPaused = true;
-        Time.timeScale = 0f; // Menghentikan waktu di dalam game (paused)
-        // Tambahkan kode tambahan di sini, seperti menampilkan UI pause atau mengatur suara
+        Time.timeScale = 0f;
+        Debug.Log("Paused");
+        pausePanel.SetActive(true);
     }
 
     private void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f; // Melanjutkan waktu di dalam game (resume)
-        // Tambahkan kode tambahan di sini, seperti menyembunyikan UI pause atau mengatur suara
+        Time.timeScale = 1f;
+        Debug.Log("Unpaused");
+        pausePanel.SetActive(false);
     }
 }
 
