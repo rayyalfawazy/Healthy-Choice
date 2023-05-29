@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
+    public PlayManager playManager; // Ambil Data Play Manager
     public GameObject[] objectsToSpawn; // Array berisi objek-objek yang akan di-spawn
     [SerializeField] float spawnDelay; // Waktu jeda antara setiap spawn
     [SerializeField] float spawnHeight; // Skala Ketinggian spawn
@@ -15,7 +16,9 @@ public class SpawnObject : MonoBehaviour
 
     private void Start()
     {
-        SpawnRandomObject();
+        playManager.GetStageData();
+        minValue = playManager.baseMinFall;
+        maxValue = playManager.baseMaxFall;
     }
 
     private void Update()
@@ -42,6 +45,8 @@ public class SpawnObject : MonoBehaviour
 
         // Buat objek baru di posisi spawn
         GameObject foods = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+        // Atur Kecepatan Jatuh Obeject
         foods.GetComponent<Foods>().SetMinMax(minValue,maxValue);
     }
 }

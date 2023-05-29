@@ -25,4 +25,14 @@ public class CatcherMovement : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, -boundScale, boundScale);
         rb.position = clampedPosition;
     }
+
+    public void MakeNotMovable()
+    {
+        speed = 0f;
+    }
+
+    public void MakeMovable()
+    {
+        speed = 10f;
+    }
 }

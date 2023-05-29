@@ -22,4 +22,9 @@ public class Catcher : MonoBehaviour
     {
         return score;
     }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
 }
