@@ -24,8 +24,6 @@ public class PlayManager : MonoBehaviour
 
     void Update()
     {
-        // Debug.Log($"Target Objective : {targetScore}");
-
         value = catcher.GetScore();
         if (value == targetScore)
         {

@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadingScene : MonoBehaviour
 {
-    public GameObject loadingScreen;
-    public TMP_Text loadingText;
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] GameObject levelSelector;
+
+    [SerializeField] Slider loadingSlider;
 
     public void LoadScene(int sceneId)
     {
+        levelSelector.SetActive(false);
+        loadingScreen.SetActive(true);
+
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
@@ -22,7 +28,7 @@ public class LoadingScene : MonoBehaviour
         while (!operation.isDone)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-            loadingText.text = progressValue.ToString(); 
+            loadingSlider.value = progressValue; 
             yield return null;
         }
     }
