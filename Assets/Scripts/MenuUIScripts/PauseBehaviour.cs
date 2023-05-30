@@ -25,7 +25,6 @@ public class PauseBehaviour : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0f;
-        Debug.Log("Paused");
         pausePanel.SetActive(true);
     }
 
@@ -33,7 +32,6 @@ public class PauseBehaviour : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
-        Debug.Log("Unpaused");
         pausePanel.SetActive(false);
     }
 }

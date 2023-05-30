@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayManager : MonoBehaviour
 {
@@ -58,9 +59,9 @@ public class PlayManager : MonoBehaviour
         }
         catch
         {
+            onEndStage.Invoke();
             SceneManager.LoadScene("LevelSelector");
             DOTween.KillAll();
-            onEndStage.Invoke();
         }
     }
 

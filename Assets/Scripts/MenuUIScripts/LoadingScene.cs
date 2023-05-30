@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,13 +12,18 @@ public class LoadingScene : MonoBehaviour
     string targetScene;
     [Range(0, 5)] public float delay;
 
+    private void Start()
+    {
+        StopAllCoroutines();
+    }
+
     public void LoadScene(string sceneName)
     {
         targetScene = sceneName;
         StartCoroutine(LoadSceneAsync());
     }
 
-    IEnumerator LoadSceneAsync()
+    private IEnumerator LoadSceneAsync()
     {
         loadingScreen.SetActive(true);
         yield return new WaitForSeconds(delay);
@@ -31,10 +37,10 @@ public class LoadingScene : MonoBehaviour
             if (progress >= 1f)
             {
                 operation.allowSceneActivation = true;
+                DOTween.KillAll();
             }
             yield return null;
         }
-
 
         loadingScreen.SetActive(false);
     }

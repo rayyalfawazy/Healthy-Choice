@@ -51,6 +51,7 @@ public class Timer : MonoBehaviour
             {
                 sequenceText.transform.localScale = Vector3.zero;
                 onComplete.Invoke();
+                DOTween.KillAll();
             }));
     }
 }

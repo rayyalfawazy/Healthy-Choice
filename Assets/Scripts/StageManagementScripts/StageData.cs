@@ -8,7 +8,7 @@ public class StageData : ScriptableObject
 {
     public string stageName;
 
-    public Image backgroundImage;
+    public Sprite backgroundImage;
 
     public int targetObjective;
 
