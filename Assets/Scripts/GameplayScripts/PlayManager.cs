@@ -60,7 +60,7 @@ public class PlayManager : MonoBehaviour
         catch
         {
             onEndStage.Invoke();
-            SceneManager.LoadScene("LevelSelector");
+            // SceneManager.LoadScene("LevelSelector");
             DOTween.KillAll();
         }
     }

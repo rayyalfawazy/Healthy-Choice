@@ -12,11 +12,6 @@ public class LoadingScene : MonoBehaviour
     string targetScene;
     [Range(0, 5)] public float delay;
 
-    private void Start()
-    {
-        StopAllCoroutines();
-    }
-
     public void LoadScene(string sceneName)
     {
         targetScene = sceneName;
@@ -29,16 +24,11 @@ public class LoadingScene : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
-        operation.allowSceneActivation = false;
 
         while (!operation.isDone)
         {
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            if (progress >= 1f)
-            {
-                operation.allowSceneActivation = true;
-                DOTween.KillAll();
-            }
+            // float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            DOTween.KillAll();
             yield return null;
         }
 
