@@ -12,7 +12,7 @@ public class StageButton : MonoBehaviour
 
     private void Start()
     {
-        text.text = $"Stage {level + 1}";
+        text.text = $"{level + 1}";
     }
 
     public void LoadStage()
