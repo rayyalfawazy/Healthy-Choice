@@ -1,13 +1,10 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class PauseBehaviour : MonoBehaviour
 {
     private bool isPaused = false;
 
     public GameObject pausePanel;
-    public HideCursor cursorHider;
 
     private void Update()
     {
@@ -24,20 +21,18 @@ public class PauseBehaviour : MonoBehaviour
         }
     }
 
-    public void PauseGame()
+    private void PauseGame()
     {
         isPaused = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
-        cursorHider.MakeVisibleUnlocked();
     }
 
-    public void ResumeGame()
+    private void ResumeGame()
     {
         isPaused = false;
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        cursorHider.MakeInvisibleLocked();
     }
 }
 
