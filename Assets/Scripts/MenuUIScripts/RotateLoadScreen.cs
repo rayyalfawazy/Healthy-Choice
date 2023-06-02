@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class RotateLoadScreen : MonoBehaviour
 {
+    public GameObject animated;
+
     void Start()
     {
-        transform.DORotate(new Vector3(0, 0, 90),1)
+        animated.transform.DORotate(new Vector3(0, 0, 90),1)
             .SetRelative()
             .SetLoops(-1)
             .SetEase(Ease.Linear);
