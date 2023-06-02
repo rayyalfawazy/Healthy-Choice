@@ -3809,7 +3809,12 @@ MonoBehaviour:
   playManager: {fileID: 1982565957}
   objectsToSpawn:
   - {fileID: 5175702100453350222, guid: d26e7ab93637d7140a71ab6ec2f228f1, type: 3}
+  - {fileID: 5175702100453350222, guid: 3e70b85c52fcc8b48b266743a264e1fb, type: 3}
+  - {fileID: 5175702100453350222, guid: 14de3daec83292e43a1ff36f50b30061, type: 3}
+  - {fileID: 5175702100453350222, guid: bc170572980b5d44f94721d90ff2884d, type: 3}
   - {fileID: 5175702100453350222, guid: 8608f27e80f133c4f960de59458ab707, type: 3}
+  - {fileID: 5175702100453350222, guid: d2a5a4304fdfdd742b14638c02bd75cd, type: 3}
+  - {fileID: 5175702100453350222, guid: ad36bb5b82ce9154993ef5a484afd1f7, type: 3}
   spawnDelay: 1
   spawnHeight: 5
   boundScale: 7.5
