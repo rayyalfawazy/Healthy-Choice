@@ -11,6 +11,7 @@ public class StageData : ScriptableObject
     public Sprite backgroundImage;
 
     public int targetObjective;
+    public int spawnDelay;
 
     public float minFallSpeedValue;
     public float maxFalSpeedValue;

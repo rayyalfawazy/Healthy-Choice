@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PauseBehaviour : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PauseBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (isPaused)
             {
@@ -21,14 +22,14 @@ public class PauseBehaviour : MonoBehaviour
         }
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         isPaused = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         isPaused = false;
         Time.timeScale = 1f;

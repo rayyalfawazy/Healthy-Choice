@@ -19,6 +19,7 @@ public class SpawnObject : MonoBehaviour
         playManager.GetStageData();
         minValue = playManager.baseMinFall;
         maxValue = playManager.baseMaxFall;
+        spawnDelay = playManager.spawnDelay;
     }
 
     private void Update()
