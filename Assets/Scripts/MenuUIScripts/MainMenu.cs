@@ -8,12 +8,14 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] TMP_Text icon;
     [SerializeField] Button startButton;
     [SerializeField] TMP_Text version;
 
     private void Start()
     {
-        AnimateButton(); // Animate Play Button
+        StartUpLogoAppear();
+        AnimateStartButton(); // Animate Play Button
         version.text = $"Version {Application.version}"; // Show Game Version
     }
 
@@ -27,10 +29,17 @@ public class MainMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-    private void AnimateButton()
+    private void AnimateStartButton()
     {
         startButton.transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.5f)
             .SetLoops(-2, LoopType.Yoyo)
             .SetEase(Ease.OutSine);
+    }
+
+    private void StartUpLogoAppear()
+    {
+        icon.transform.localScale = Vector3.zero;
+        icon.transform.DOScale(Vector3.one, 3)
+            .SetEase(Ease.InOutExpo);
     }
 }
