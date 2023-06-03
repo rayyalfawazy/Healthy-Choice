@@ -7,15 +7,13 @@ using DG.Tweening;
 
 public class MainMenu : MonoBehaviour
 {
-    private Button button;
+    [SerializeField] Button startButton;
+
     private void Start()
     {
-        button = GetComponent<Button>();
-        transform.localScale = Vector3.one;
-        transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.5f)
-            .SetLoops(-2, LoopType.Yoyo)
-            .SetEase(Ease.OutSine);
+        AnimateStartButton();
     }
+
     public void StartGame()
     {
         SceneManager.LoadScene("LevelSelector");
@@ -28,6 +26,13 @@ public class MainMenu : MonoBehaviour
 
     public void fullScreen(bool isFullScreen)
     {
-        Screen.fullScreen = isFullScreen; 
+        Screen.fullScreen = isFullScreen;
+    }
+
+    private void AnimateStartButton()
+    {
+        startButton.transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.5f)
+            .SetLoops(-2, LoopType.Yoyo)
+            .SetEase(Ease.OutSine);
     }
 }
