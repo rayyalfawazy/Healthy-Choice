@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
@@ -14,16 +15,14 @@ public class SpawnObject : MonoBehaviour
 
     private float spawnTimer = 0.0f;
 
-    private void Start()
+    private void Update()
     {
+        // Get Stage Data
         playManager.GetStageData();
         minValue = playManager.baseMinFall;
         maxValue = playManager.baseMaxFall;
         spawnDelay = playManager.spawnDelay;
-    }
 
-    private void Update()
-    {
         spawnTimer += Time.deltaTime;
 
         // Cek apakah sudah waktunya untuk spawn objek baru

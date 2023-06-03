@@ -13,6 +13,15 @@ public class Foods : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        // Destroy Object off-screen
+        if (transform.position.y <= -5)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void FixedUpdate()
     {
         Vector2 velocity = new Vector2(0, -fallSpeed);

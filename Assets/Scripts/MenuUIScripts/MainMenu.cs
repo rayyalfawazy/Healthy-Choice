@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
     public void SetSFXVolume()
     {
         float SFXVolume = Mathf.Log10(SFX_Slider.value) * 20;
-        audioMixer.SetFloat("UI_Volume_Mixer", SFXVolume);
+        audioMixer.SetFloat("SFX_Volume_Mixer", SFXVolume);
         PlayerPrefs.SetFloat("SFX_Volume", SFX_Slider.value);
     }
 

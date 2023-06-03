@@ -10,7 +10,6 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] PlayManager playManager;
     [SerializeField] TMP_Text sequenceText;
-    //[SerializeField] PauseBehaviour pauseBehaviour;
     public UnityEvent onComplete;
 
     public void PreStartTimer()
