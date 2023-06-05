@@ -15,5 +15,6 @@ MonoBehaviour:
   stageName: Stage 3
   backgroundImage: {fileID: 0}
   targetObjective: 10
+  spawnDelay: 2
   minFallSpeedValue: 6
   maxFalSpeedValue: 7

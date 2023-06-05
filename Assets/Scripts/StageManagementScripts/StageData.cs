@@ -8,9 +8,10 @@ public class StageData : ScriptableObject
 {
     public string stageName;
 
-    public Image backgroundImage;
+    public Sprite backgroundImage;
 
     public int targetObjective;
+    public int spawnDelay;
 
     public float minFallSpeedValue;
     public float maxFalSpeedValue;

@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayManager : MonoBehaviour
 {
     [SerializeField] Catcher catcher;
     [SerializeField] UnityEvent onWin, onLose, preStart, onEndStage;
+
+    public int spawnDelay;
     public int targetScore;
     public float baseMinFall, baseMaxFall;
     public List<StageData> stageDatas;
@@ -24,8 +27,6 @@ public class PlayManager : MonoBehaviour
 
     void Update()
     {
-        // Debug.Log($"Target Objective : {targetScore}");
-
         value = catcher.GetScore();
         if (value == targetScore)
         {
@@ -54,15 +55,16 @@ public class PlayManager : MonoBehaviour
         {
             int tmpIndex = PlayerPrefs.GetInt("LevelData");
             currentStage = stageDatas[tmpIndex];
+            spawnDelay = currentStage.spawnDelay;
             targetScore = currentStage.targetObjective;
             baseMinFall = currentStage.minFallSpeedValue;
             baseMaxFall = currentStage.maxFalSpeedValue;
         }
         catch
         {
-            SceneManager.LoadScene("LevelSelector");
-            DOTween.KillAll();
             onEndStage.Invoke();
+            // SceneManager.LoadScene("LevelSelector");
+            DOTween.KillAll();
         }
     }
 

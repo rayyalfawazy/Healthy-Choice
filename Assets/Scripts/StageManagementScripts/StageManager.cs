@@ -8,7 +8,6 @@ public class StageManager : MonoBehaviour
     public StageButton stageButton;
     public Transform stageParent;
 
-    // Start is called before the first frame update
     void Start()
     {
         for(int i = 0; i < stageDatas.Count; i++) 

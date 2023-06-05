@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StageButton : MonoBehaviour
 {
@@ -11,12 +12,11 @@ public class StageButton : MonoBehaviour
 
     private void Start()
     {
-        text.text = $"Stage {level + 1}";
+        text.text = $"{level + 1}";
     }
 
     public void LoadStage()
     {
-        SceneManager.LoadScene("Gameplay");
         PlayerPrefs.SetInt("LevelData", level);
     }
 }
