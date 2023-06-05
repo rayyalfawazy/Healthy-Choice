@@ -41,6 +41,11 @@ public class MainMenu : MonoBehaviour
     {
         float BGMVolume = Mathf.Log10(BGM_Slider.value) * 20;
         audioMixer.SetFloat("BGM_Volume_Mixer", BGMVolume);
+
+        if (BGMVolume == -40) 
+        {
+            audioMixer.SetFloat("BGM_Volume_Mixer", -80f);
+        }
         PlayerPrefs.SetFloat("BGM_Volume", BGM_Slider.value);
     }
 
@@ -48,6 +53,12 @@ public class MainMenu : MonoBehaviour
     {
         float SFXVolume = Mathf.Log10(SFX_Slider.value) * 20;
         audioMixer.SetFloat("SFX_Volume_Mixer", SFXVolume);
+
+        if (SFXVolume == -40) 
+        {
+            audioMixer.SetFloat("SFX_Volume_Mixer", -80f);
+        }
+        
         PlayerPrefs.SetFloat("SFX_Volume", SFX_Slider.value);
     }
 
