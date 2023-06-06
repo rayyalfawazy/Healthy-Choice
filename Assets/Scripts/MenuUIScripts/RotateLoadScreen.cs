@@ -7,10 +7,13 @@ using UnityEngine;
 public class RotateLoadScreen : MonoBehaviour
 {
     public GameObject animated;
+    public TMP_Text randomText;
+    [TextArea] public List<string> loadingRandomText;
 
     void Start()
     {
         AnimateLoadScreen();
+        GenerateRandomText();
     }
 
     void AnimateLoadScreen()
@@ -19,5 +22,17 @@ public class RotateLoadScreen : MonoBehaviour
             .SetRelative()
             .SetLoops(-1)
             .SetEase(Ease.Linear);
+    }
+
+    void GenerateRandomText()
+    {
+        int randomIndex = Random.Range(0, loadingRandomText.Count);
+        for (int i = 0; i < loadingRandomText.Count; i++)
+        {
+            if (i == randomIndex)
+            {
+                randomText.text = loadingRandomText[i];
+            }
+        }
     }
 }

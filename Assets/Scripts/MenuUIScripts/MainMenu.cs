@@ -10,7 +10,7 @@ using System;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] TMP_Text icon;
+    [SerializeField] Image icon;
     [SerializeField] Button startButton;
     [SerializeField] TMP_Text version;
     [SerializeField] Slider BGM_Slider, SFX_Slider;
@@ -61,7 +61,7 @@ public class MainMenu : MonoBehaviour
 
     private void LogoLoopMovement()
     {
-        icon.rectTransform.DOAnchorPos(new Vector2(0, 270f), 1.5f)
+        icon.rectTransform.DOAnchorPos(new Vector2(0, 250f), 1.5f)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.OutSine);
     }
