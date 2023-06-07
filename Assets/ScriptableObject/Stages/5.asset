@@ -16,5 +16,5 @@ MonoBehaviour:
   backgroundImage: {fileID: 0}
   targetObjective: 15
   spawnDelay: 1
-  minFallSpeedValue: 8
-  maxFalSpeedValue: 9
+  minFallSpeedValue: 9
+  maxFalSpeedValue: 10
