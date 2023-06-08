@@ -15,6 +15,7 @@ public class PlayManager : MonoBehaviour
     public int spawnDelay;
     public int targetScore;
     public float baseMinFall, baseMaxFall;
+    public Texture2D backgroundImage;
     public List<StageData> stageDatas;
     public StageData currentStage;
     [System.NonSerialized] public int value;
@@ -59,11 +60,11 @@ public class PlayManager : MonoBehaviour
             targetScore = currentStage.targetObjective;
             baseMinFall = currentStage.minFallSpeedValue;
             baseMaxFall = currentStage.maxFalSpeedValue;
+            backgroundImage = currentStage.stageBackgroundImage;
         }
         catch
         {
             onEndStage.Invoke();
-            // SceneManager.LoadScene("LevelSelector");
             DOTween.KillAll();
         }
     }

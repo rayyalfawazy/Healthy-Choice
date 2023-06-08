@@ -8,7 +8,7 @@ public class StageData : ScriptableObject
 {
     public string stageName;
 
-    public Sprite backgroundImage;
+    public Texture2D stageBackgroundImage;
 
     public int targetObjective;
     public int spawnDelay;
