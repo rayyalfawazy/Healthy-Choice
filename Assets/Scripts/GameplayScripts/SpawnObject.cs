@@ -12,7 +12,6 @@ public class SpawnObject : MonoBehaviour
     [SerializeField] float boundScale; // Skala Batasan Horizontal
     [SerializeField] float minValue; // Skala Batasan Minumum Fall
     [SerializeField] float maxValue; // Skala Batasan Maksimum Fall
-    // [SerializeField] GameObject spawnerParrent;
 
     private float spawnTimer = 0.0f;
 

@@ -2786,8 +2786,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4075,15 +4075,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85490197, g: 1, b: 0.72156864, a: 1}
+  m_Color: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: fb9ac914cde9322489de7672958722ea, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6259,7 +6259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sebaliknya Jika kamu berhasil mengumpulkan makanan sehat hingga "Unheealthy
+  m_text: Sebaliknya Jika kamu mengumpulkan makanan tidak sehat hingga "Unheealthy
     Point Bar" terpenuhi maka kamu akan dinyatakan kalah.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42dbfaba179f8b8499d600e06642e0f2, type: 2}
@@ -6441,8 +6441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -732.3045, y: -73}
-  m_SizeDelta: {x: 427.3722, y: 118.8059}
+  m_AnchoredPosition: {x: -773.8616, y: -73}
+  m_SizeDelta: {x: 344.2581, y: 118.8059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698835950
 MonoBehaviour:
@@ -6462,7 +6462,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 34.2
+  m_Spacing: 16.1
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
