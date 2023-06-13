@@ -10,6 +10,7 @@ public class SpawnObjectMainMenu : MonoBehaviour
     [SerializeField] float boundScale; // Skala Batasan Horizontal
     [SerializeField] float minValue; // Skala Batasan Minumum Fall
     [SerializeField] float maxValue; // Skala Batasan Maksimum Fall
+    [SerializeField] GameObject spawnerParrent;
 
     private float spawnTimer = 0.0f;
 
@@ -36,7 +37,11 @@ public class SpawnObjectMainMenu : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnX, spawnHeight, 0.0f);
 
         // Buat objek baru di posisi spawn
-        GameObject foods = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+        GameObject foods = Instantiate(
+            objectToSpawn, 
+            spawnPosition, 
+            Quaternion.identity, 
+            spawnerParrent.transform);
 
         // Atur Kecepatan Jatuh Obeject
         foods.GetComponent<Foods>().SetMinMax(minValue, maxValue);

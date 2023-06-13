@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   stageName: Stage 5
-  backgroundImage: {fileID: 0}
+  stageBackgroundImage: {fileID: 2800000, guid: 75b060cd4a586e144892c00fee9fe63a, type: 3}
   targetObjective: 15
   spawnDelay: 1
   minFallSpeedValue: 8

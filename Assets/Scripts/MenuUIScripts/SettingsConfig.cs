@@ -1,69 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using DG.Tweening;
-using TMPro;
 using UnityEngine.Audio;
-using System;
+using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class SettingsConfig : MonoBehaviour
 {
-    [SerializeField] Image icon;
-    [SerializeField] Button startButton;
-    [SerializeField] TMP_Text version;
     [SerializeField] Slider BGM_Slider, SFX_Slider;
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] Toggle muteToggle;
 
-    private void Start()
+    void Start()
     {
-        StartUpLogoAppear(); // Animate Logo Appear
-        LogoLoopMovement(); // Animate Logo Idle
-        AnimateStartButton(); // Animate Play Button Idle
-        version.text = $"Version {Application.version}"; // Show Game Version
-
-        //Player Pref Loader
         BGM_Slider.value = PlayerPrefs.GetFloat("BGM_Volume");
         SFX_Slider.value = PlayerPrefs.GetFloat("SFX_Volume");
         muteToggle.isOn = PlayerPrefs.GetInt("IsMute") == 1 ? true : false;
     }
 
-    private void Update()
+    void Update()
     {
-        MuteChecker(); // Periksa State Mute dari Player Prefs
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void fullScreen(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
-    }
-
-    private void AnimateStartButton()
-    {
-        startButton.transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 1f)
-            .SetLoops(-2, LoopType.Yoyo)
-            .SetEase(Ease.OutSine);
-    }
-
-    private void StartUpLogoAppear()
-    {
-        icon.transform.localScale = Vector3.zero;
-        icon.transform.DOScale(Vector3.one, 1)
-            .SetEase(Ease.InOutExpo);
-    }
-
-    private void LogoLoopMovement()
-    {
-        icon.rectTransform.DOAnchorPos(new Vector2(0, 250f), 1.5f)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetEase(Ease.OutSine);
+        MuteChecker();
     }
 
     public void SetBGMVolume()
