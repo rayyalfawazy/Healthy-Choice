@@ -7,9 +7,32 @@ using UnityEngine;
 public class CatcherMovement : MonoBehaviour
 {
     [Range(0,10)] public float speed;
-    [SerializeField] float boundScale;
+    public float boundScale;
 
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
+    public Sprite idle, left, right;
+    public SpriteRenderer targetSprite;
+
+    private void Update()
+    {
+        // Change Sprite Left and Right Movement
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+        if (moveHorizontal < 0)
+        {
+            targetSprite.sprite = left;
+            
+        }
+        else if (moveHorizontal > 0)
+        {
+            targetSprite.sprite = right;
+        }
+        else
+        {
+            targetSprite.sprite = idle;
+        }
+    }
+
 
     private void FixedUpdate()
     {
