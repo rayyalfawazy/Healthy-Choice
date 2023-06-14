@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class PlayManager : MonoBehaviour
 {
-    [SerializeField] Catcher catcher;
-    [SerializeField] UnityEvent onWin, onLose, preStart, onEndStage;
+    public Catcher catcher;
+    public UnityEvent onWin, onLose, preStart, onEndStage;
 
     public int spawnDelay;
     public int targetScore;
@@ -18,7 +19,7 @@ public class PlayManager : MonoBehaviour
     public Texture2D backgroundImage;
     public List<StageData> stageDatas;
     public StageData currentStage;
-    [System.NonSerialized] public int value;
+    [System.NonSerialized] public int scoreValue, healthValue;
 
     private void Start()
     {
@@ -28,14 +29,16 @@ public class PlayManager : MonoBehaviour
 
     void Update()
     {
-        value = catcher.GetScore();
-        if (value == targetScore)
+        scoreValue = catcher.score;
+        healthValue = catcher.score;
+
+        if (scoreValue == targetScore)
         {
             // Win Statement
             onWin.Invoke();
         }
 
-        if (value == -targetScore)
+        if (healthValue <= 0)
         {
             // Lose Statement
             onLose.Invoke();
@@ -67,6 +70,12 @@ public class PlayManager : MonoBehaviour
             onEndStage.Invoke();
             DOTween.KillAll();
         }
+    }
+
+    public void ResetScore()
+    {
+        catcher.score = 0;
+        catcher.health = 10;
     }
 
     public void PreStart()

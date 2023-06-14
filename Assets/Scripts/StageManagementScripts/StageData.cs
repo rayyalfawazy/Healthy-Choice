@@ -11,6 +11,7 @@ public class StageData : ScriptableObject
     public Texture2D stageBackgroundImage;
 
     public int targetObjective;
+    public int lifeHealth;
     public int spawnDelay;
 
     public float minFallSpeedValue;

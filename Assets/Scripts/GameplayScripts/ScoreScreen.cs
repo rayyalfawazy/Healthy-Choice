@@ -9,7 +9,7 @@ public class ScoreScreen : MonoBehaviour
 {
     [SerializeField] PlayManager playManager;
     [SerializeField] Catcher catcher;
-    [SerializeField] Slider fillHealthySlider, fillUnhealthySlider;
+    [SerializeField] Slider fillHealthySlider, fillLifeSlider;
     [SerializeField] float slideSmoothness;
 
     private void Start()
@@ -20,22 +20,22 @@ public class ScoreScreen : MonoBehaviour
     private void Update()
     {
 
-        if (playManager.value >= 0)
+        if (playManager.scoreValue >= 0)
         {
             float currentVelocity = 0;
             float currentValue = Mathf.SmoothDamp(fillHealthySlider.value,
-                                                playManager.value, ref currentVelocity,
+                                                playManager.scoreValue, ref currentVelocity,
                                                 slideSmoothness * Time.deltaTime);
             fillHealthySlider.value = currentValue;
         }
 
-        if (playManager.value <= 0)
+        if (playManager.healthValue <= 10)
         {
             float currentVelocity = 0;
-            float currentValue = Mathf.SmoothDamp(fillUnhealthySlider.value,
-                                                Mathf.Abs(playManager.value), ref currentVelocity,
+            float currentValue = Mathf.SmoothDamp(fillLifeSlider.value,
+                                                playManager.healthValue, ref currentVelocity,
                                                 slideSmoothness * Time.deltaTime);
-            fillUnhealthySlider.value = currentValue;
+            fillLifeSlider.value = currentValue;
         }
     }
 
@@ -43,6 +43,6 @@ public class ScoreScreen : MonoBehaviour
     {
         playManager.GetStageData();
         fillHealthySlider.maxValue = playManager.targetScore;
-        fillUnhealthySlider.maxValue = playManager.targetScore;
+        fillLifeSlider.value = 10;
     }
 }
