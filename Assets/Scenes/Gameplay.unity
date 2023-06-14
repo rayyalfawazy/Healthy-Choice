@@ -1055,7 +1055,7 @@ MonoBehaviour:
   playManager: {fileID: 1982565957}
   catcher: {fileID: 1778286600}
   fillHealthySlider: {fileID: 186703545}
-  fillUnhealthySlider: {fileID: 349335149}
+  fillLifeSlider: {fileID: 349335149}
   slideSmoothness: 5
 --- !u!1 &174074257
 GameObject:
@@ -2710,7 +2710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396069891}
   m_Layer: 5
-  m_Name: Unhelathy Point
+  m_Name: Life Bar Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5410,7 +5410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unhealthy Point
+  m_text: Life Bar Point
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42dbfaba179f8b8499d600e06642e0f2, type: 2}
   m_sharedMaterial: {fileID: -3521071914874873166, guid: 42dbfaba179f8b8499d600e06642e0f2, type: 2}
@@ -10360,6 +10360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad1301dcedc1df49b394ab6f370754d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  health: 0
   healthyAudioSource: {fileID: 248331699}
   unhealthyAudioSource: {fileID: 1466605095}
 --- !u!1 &1787999782
