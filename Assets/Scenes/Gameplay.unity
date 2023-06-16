@@ -10498,7 +10498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853644970955124555, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8276988172643682612, guid: 1fb212257cb1b55448200ac96d491f79, type: 3}
       propertyPath: healthyAudioSource
